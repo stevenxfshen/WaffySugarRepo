@@ -33,3 +33,12 @@ sudo apt install nodejs -y
 
 # Install Open5GS WebUI
 curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -
+
+
+
+sudo sed -i '/ngap:/,/address:/s/address: 127.0.0.5/address: 192.168.33.64/' /etc/open5gs/amf.yaml
+sudo sed -i '/plmn_id:/,/mcc:/s/mcc: 999/mcc: 315/' /etc/open5gs/amf.yaml
+sudo sed -i '/plmn_id:/,/mnc:/s/mnc: 70/mnc: 010/' /etc/open5gs/amf.yaml
+sudo sed -i '/gtpu:/,/address:/s/address: 127.0.0.7/address: 10.38.0.64/' /etc/open5gs/upf.yaml
+sudo sed -i '/session:/,/subnet:/s/subnet: 10.45.0.0/subnet: 172.28.0.0/' /etc/open5gs/upf.yaml
+sudo sed -i '/session:/,/gateway:/s/gateway: 10.45.0.1/gateway: 172.28.0.1/' /etc/open5gs/upf.yaml
