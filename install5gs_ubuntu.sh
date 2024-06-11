@@ -17,13 +17,13 @@ sudo systemctl start mongod
 sudo systemctl enable mongod
 
 # Install Open5GS
-sudo add-apt-repository ppa:open5gs/latest
+sudo add-apt-repository ppa:open5gs/latest -y
 sudo apt update
 sudo apt install open5gs -y
 
 # Install Node.js
 sudo apt update
-sudo apt install -y ca-certificates curl gnupg
+sudo apt install ca-certificates curl gnupg -y 
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 NODE_MAJOR=20
