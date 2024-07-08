@@ -42,3 +42,6 @@ sudo sed -i '/plmn_id:/,/mnc:/s/mnc: 70/mnc: 010/' /etc/open5gs/amf.yaml
 sudo sed -i '/gtpu:/,/address:/s/address: 127.0.0.7/address: 10.38.0.64/' /etc/open5gs/upf.yaml
 sudo sed -i '/session:/,/subnet:/s/subnet: 10.45.0.0/subnet: 172.28.0.0/' /etc/open5gs/upf.yaml
 sudo sed -i '/session:/,/gateway:/s/gateway: 10.45.0.1/gateway: 172.28.0.1/' /etc/open5gs/upf.yaml
+
+sed -i '/Environment=NODE_ENV=production/a Environment=HOSTNAME=0.0.0.0\nEnvironment=PORT=8080' A
+
